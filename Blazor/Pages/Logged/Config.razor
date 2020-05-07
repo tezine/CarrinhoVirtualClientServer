@@ -1,0 +1,47 @@
+﻿@page "/Config"
+@layout LoggedLayout
+@inherits ConfigBase
+@using Syncfusion.Blazor.Inputs
+@using Syncfusion.Blazor.Navigations
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link toolButtonStyle" @onclick="OnBtnSalvarClicked">Salvar <span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+    </div>
+    <span class="navbar-text">
+        Config
+    </span>
+</nav>
+
+<MatTabGroup>
+    <MatTab Label="Geral">
+        
+    </MatTab>
+    <MatTab Label="Admin Users">
+        <div class="container-fluid">
+            @if (adminUsers == null) {
+                <p><em>Carregando...</em></p>
+            } else {
+        <div class="table mat-elevation-z7">
+            <SfGrid AllowFiltering="true" AllowSorting="true" DataSource="@adminUsers">
+                <GridColumns>
+                    <GridColumn Field=@nameof(EAdminUser.Name) HeaderText="Nome"></GridColumn>
+                    <GridColumn Field=@nameof(EAdminUser.Email) HeaderText="E-mail"></GridColumn>
+                </GridColumns>
+            </SfGrid>
+        </div>
+            }
+        </div>
+    </MatTab>    
+</MatTabGroup>
+
+
+<style>
+    .toolButtonStyle {
+        cursor: pointer;
+    }
+</style>

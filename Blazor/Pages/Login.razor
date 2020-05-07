@@ -1,0 +1,33 @@
+﻿@page "/Login"
+@page "/"
+@inherits LoginBase
+@using Syncfusion.Blazor.Inputs
+
+<VColumnLayout Width="50%"
+               Height="50%">
+
+</VColumnLayout>
+
+<div class="loginGridLayout">
+
+    <div style="grid-column-start:2;grid-column-end:2;grid-row-start:2;grid-row-end:2;">
+        <div style="display:flex;flex-direction:column;justify-content:center">
+            <h3>Login</h3>
+            <SfTextBox Placeholder="E-mail" FloatLabelType="@FloatLabelType.Auto" @bind-Value="e.Email"></SfTextBox>
+            <SfTextBox Placeholder="Senha" Type="password" FloatLabelType="@FloatLabelType.Auto" @bind-Value="e.Password"></SfTextBox>
+            <div class="col-md-4"><SfButton IsPrimary="true" @onclick="OnBtnLoginClicked" CssClass="float-right">LOGIN</SfButton></div>
+        </div>
+    </div>
+
+</div>
+
+<style>
+    .loginGridLayout {
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        grid-template-rows: 33% 33% 33%;
+        min-height: 100vh;
+        background-color: dimgray
+    }
+</style>
+

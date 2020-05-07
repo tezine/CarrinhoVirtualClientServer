@@ -1,0 +1,19 @@
+﻿@inherits VCircleBase
+
+<div class="tazorCircle">
+    @ChildContent
+</div>
+
+
+<style>
+    .tazorCircle {
+        border-radius: 50%;
+        display: inline-block;
+        position: relative;
+         width: @Width;
+        height: @Height;
+        background-color: @BackgroundColor;
+    }
+</style>
+
+

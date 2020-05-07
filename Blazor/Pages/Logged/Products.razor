@@ -1,0 +1,31 @@
+﻿@page "/Produtos"
+@layout LoggedLayout
+@inherits ProdutosBase
+@using Syncfusion.Blazor.Navigations
+
+<SfToolbar>
+    <ToolbarItems>
+        <ToolbarItem PrefixIcon="fa fa-plus-square" TooltipText="Adicionar" Text="Adicionar" OnClick="OnBtnAddClicked"></ToolbarItem>
+        <ToolbarItem PrefixIcon="fa fa-file-csv" TooltipText="Importar" Text="Importar" OnClick="OnBtnImportCSVClicked"></ToolbarItem>
+    </ToolbarItems>
+</SfToolbar>
+
+<input hidden type="file" @onchange="OnFileChanged" @ref=fileInput/>
+
+<div class="container-fluid">
+    @if (produtos == null) {
+        <p><em>Carregando...</em></p>
+    } else {
+        <div class="table mat-elevation-z7">
+            <SfGrid AllowFiltering="true" AllowSorting="true" DataSource="@produtos">
+                <GridColumns>
+                    <GridColumn Field=@nameof(EProduct.Name) HeaderText="Nome"></GridColumn>
+                    <GridColumn Field=@nameof(EProduct.Description) HeaderText="Descrição"></GridColumn>
+                </GridColumns>
+            </SfGrid>
+        </div>
+    }
+</div>
+
+
+

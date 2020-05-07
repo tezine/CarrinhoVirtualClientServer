@@ -1,0 +1,27 @@
+﻿@inherits VRowLayoutBase
+
+    <div class="tazorRowLayout">
+        @ChildContent
+    </div>
+
+
+    <style>
+    .tazorRowLayout {
+        width: @Width;
+        height: @Height;
+        background-color: @BackgroundColor;
+        padding-left:@PaddingLeft;
+        padding-right:@PaddingRight;
+        padding-top:@PaddingTop;
+        padding-bottom:@PaddingBottom;
+        margin-left:@MarginLeft;
+        margin-right:@MarginRight;
+        margin-top:@MarginTop;
+        margin-bottom:@MarginBottom;
+        cursor:@CursorType;
+        grid-column-start:@GridLayoutColumnStart;
+        grid-column-end:@GridLayoutColumnEnd;
+        display:flex;
+        flex-direction:row;
+    }
+    </style>

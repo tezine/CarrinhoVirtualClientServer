@@ -1,0 +1,40 @@
+﻿@page "/Clientes"
+@layout LoggedLayout
+@inherits ClientesBase
+@using Syncfusion.Blazor.Navigations
+ 
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+
+            </li>
+        </ul>
+    </div>
+    <span class="navbar-text">
+        Clientes
+    </span>
+</nav>
+
+<div class="container-fluid">
+    @if (clientes == null) {
+        <p><em>Carregando...</em></p>
+    } else {
+<div class="table mat-elevation-z7">
+    <SfGrid AllowFiltering="true" AllowSorting="true" DataSource="@clientes">
+        <GridColumns>
+            <GridColumn Field=@nameof(EUser.Name) HeaderText="Nome"></GridColumn>
+            <GridColumn Field=@nameof(EUser.Email) HeaderText="E-mail"></GridColumn>
+        </GridColumns>
+    </SfGrid>
+</div>
+    }
+</div>
+
+
+<style>
+    .Toolbar {
+        background-color: gray;
+    }
+</style>

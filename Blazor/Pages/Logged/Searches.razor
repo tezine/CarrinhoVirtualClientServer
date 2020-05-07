@@ -1,0 +1,31 @@
+﻿@page "/TextosDigitados"
+@layout LoggedLayout
+@inherits TextosDigitadosBase
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+
+            </li>
+        </ul>
+    </div>
+    <span class="navbar-text">
+        Textos digitados
+    </span>
+</nav>
+
+<div class="container-fluid">
+    @if (textos == null) {
+        <p><em>Carregando...</em></p>
+    } else {
+        <div class="table mat-elevation-z7">
+            <SfGrid AllowFiltering="true" AllowSorting="true" DataSource="@textos">
+                <GridColumns>
+                    <GridColumn Field=@nameof(ESearch.Text) HeaderText="Texto"></GridColumn>
+                </GridColumns>
+            </SfGrid>
+        </div>
+    }
+</div>
+

@@ -1,0 +1,14 @@
+﻿@inherits VRectangleBase
+
+
+    <div class="tazorRectangle">
+        @ChildContent
+    </div>
+
+<style>
+    .tazorRectangle {
+        width: @Width;
+        height: @Height;
+        background-color: @BackgroundColor;
+    }
+</style>
